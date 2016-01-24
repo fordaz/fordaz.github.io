@@ -29,12 +29,12 @@ In the following descriptions and examples we'll assume the following model and 
  This means that during a period of quiescence (no pending operations) operations seems to occur in real-time, and during periods of concurrent operations they seem to occur in an arbitrary order.
 
 For example, the following history is Quiescent Consistent:
-![example 1]({{ site.url }}/images/history-1.png)
+![example 1]({{ site.url }}/images/2016-01-23-consistency-models-I-post/history-1.png)
 
 Since `P1:W(x)1` and `P2:W(x)2` are non overlapping, they seem to take place in real-time, and both `P3` and `P4` read the same value `2` from variable `x`. Also, the set of overlapping operations `P2:R(x)2`, `P3:W(x)3` and `P4:R(x)3` allow a read of two different values from `x`.
 
 On the other hand, the following history is not Quiescent Consistent:
-![example 2]({{ site.url }}/images/history-2.png)
+![example 2]({{ site.url }}/images/2016-01-23-consistency-models-I-post/history-2.png)
 
 As it violates the property that during non overlapping operations like `P1:W(x)1` and `P2:W(x)2` should appear to occur in real-time order.
 
@@ -48,7 +48,7 @@ As it violates the property that during non overlapping operations like `P1:W(x)
 The **most recent** aspect of the definition implies that we have to have a real-time ordering to be able to unambiguously identify which one was the most recent operation.
 
 If we consider the following two processes `P1` and `P2` on different nodes `N1` and `N2` respectively. 
-![example 2]({{ site.url }}/images/history-3.png)
+![example 2]({{ site.url }}/images/2016-01-23-consistency-models-I-post/history-3.png)
 
 Where `P1` writes the value of `1` to `x` and Process `P2` immediately reading it from its local copy. Strict consistency requires that the write operation takes no latency to propagate from `N1` to `N2`, regardless of how far the two nodes are, and how close in time the read operation is to the write operation. This makes this consistency model intuitively easy to understand, but virtually impossible to implement in distributed systems.
 
@@ -61,17 +61,17 @@ Where `P1` writes the value of `1` to `x` and Process `P2` immediately reading i
 > sequential order (arbitrary interleaving), respecting the program order of each one of them.
 
 For example, The following history is Sequentially Consistent:
-![example 2]({{ site.url }}/images/history-4.png)
+![example 2]({{ site.url }}/images/2016-01-23-consistency-models-I-post/history-4.png)
 
 In this case, even when `P1:W(x)1` was invoked first, it really took effect after `P2:W(x)2` (arbitrary interleaving). Both processes `P2` and `P3` see the same sequence of values `2,1` from variable `x`.
 
 On the other hand, the following is not a Sequentially Consistent history:
-![example 2]({{ site.url }}/images/history-5.png)
+![example 2]({{ site.url }}/images/2016-01-23-consistency-models-I-post/history-5.png)
 
 Because process `P2` is seeing the sequence `2,1` while `P3` is seeing `1,2` from the same variable `x`. This violates the property that all processes see the same interleaving of the operations.
 
 Similarly, the following is not a Sequentially Consistent history:
-![example 2]({{ site.url }}/images/history-6.png)
+![example 2]({{ site.url }}/images/2016-01-23-consistency-models-I-post/history-6.png)
 
 As it does not respect the program order of the process `P3`, since the first read operation `P3:R(y)1` should have had returned `0` instead of `1` because the operation `P3:W(y)1` comes as the second operation.
 
