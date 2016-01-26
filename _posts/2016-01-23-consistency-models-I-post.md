@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Review of Consistency Models - Part I"
-description: "Hihgliting definition, main properties and examples of some of the Consistency models"
+description: "Highlighting definitions, main properties and examples of some of the Consistency models"
 tags: [distributed systems, consistency models]
 ---
 

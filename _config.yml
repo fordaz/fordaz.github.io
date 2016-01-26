@@ -1,6 +1,6 @@
 title:            fordaz' blog
 description:      Personal Blog of Fermin Ordaz.
-#disqus_shortname: Brief description
+disqus_shortname: fordaz
 reading_time:     true
 words_per_minute: 200
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
