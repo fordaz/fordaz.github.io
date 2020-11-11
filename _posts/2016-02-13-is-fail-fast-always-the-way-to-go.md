@@ -18,7 +18,7 @@ In this post, we are interested in contrasting the Fail Fast vs Self Healing[^fn
 ## Fail Fast
 In this context, this means service A stops running, and any external service will see it as unavailable. This will likely happen in conjunction with a critical notification, and will require some external entity (human or automated) to correct the issue and restart the service A after service B has recovered.
 
-To better understand the implications of this approach, let's see what would happen if we had N number of services, with M interdependencies that evolve over time, eg. new services come, dependency from service `i` to `j` is established, others are removed, etc.
+To better understand the implications of this approach, let's see what would happen if we had N number of services, with M interdependencies that evolve over time, eg. new services come, dependency from service **i** to **j** is established, others are removed, etc.
 
 Having an external script that automatically restart the failing services, still leaves the door wide open for a situation when dependent services being restarted see one or more of their dependencies as unavailable, creating a race condition that leaves no guarantees to converge to having all the services up and running.
 
