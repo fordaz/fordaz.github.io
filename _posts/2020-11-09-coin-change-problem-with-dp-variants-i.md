@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Coin change problem variants (I)"
+title: "Coin Change problem variants (I)"
 description: "Reviewing Dynamic Programming by comparing and contrasting different variantes of the Coin change problem"
 tags: [dynamic programming, coin change problem, algorithm design, programming interviews]
 comments: true
@@ -11,7 +11,7 @@ usemathjax: true
 
 This is not a tutorial on Dynamic Programming, but more of a practice session where we take few variants of the Coin Change problem, and step by step, break down the analysis into the fundamental insights that will lead us to put together a solution. If you are looking to brush up on DP or simply get started on it, these are two of my favorite resources [Tim Roughgarden's lectures](https://www.youtube.com/watch?v=0awkct8SkxA&list=PLXFMmlk03Dt5EMI2s2WQBsLsZl7A5HEK6&index=39&ab_channel=StanfordAlgorithms), as well as [Eric Vigoda's lectures](https://www.udacity.com/course/introduction-to-graduate-algorithms--ud401).
 
-The way we'll break down the analysis, is based on the following questions or steps:
+The way we'll break down the analysis is based on the following questions or steps:
 
 * How can we define the sub-problems?
 >DP is all about solving smaller sub-problems, so this is where we start.
@@ -27,7 +27,8 @@ NOTE: Even though some of these problems can be solved using recursion and other
 # The Coin change Problem
 
 ## Variant 1: 
-> Given unlimited coins of each denomination, determine if a coin change is possible for a given amount. Implement a function that returns True or False accordingly.
+
+> Given an unlimited supply of coins of denominations **d1, d2, ... , dn**, we wish to make change for a value v; that is, we wish to find a set of coins whose total value is v. This might not be possible: for instance, if the denominations are 5 and 10 then we can make change for 15 but not for 12.
 
 ### How can we define the sub-problems?
 
@@ -82,7 +83,7 @@ Comments:
 
 ## Variant 2
 
-> Using at most one of each coin denomination, determine if coin change is possible. Implement a function that returns True or False accordingly.
+> Given a supply of one coin per each denominations **d1, d2, ... , dn**, we wish to make change for a value v; that is, we wish to find a set of coins whose total value is v. This might not be possible: for instance, if the denominations are 5 and 10 then we can make change for 15 but not for 12.
 
 ### How can we define the sub-problems?
 
@@ -150,5 +151,6 @@ Comments:
 ---
 
 ## References
+* [Algorithms by Dasgupta, Papadimitriou and Vazirani (p. 184, problem 6.17)](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
 * Leetcode's [coin change](https://leetcode.com/problems/coin-change/)
 * Leetcode's [coin change II](https://leetcode.com/problems/coin-change-2/)
