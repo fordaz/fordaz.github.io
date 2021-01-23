@@ -38,5 +38,5 @@ I have not yet heard anyone saying: "I'm really glad I have 5 meetings today". E
 
 ### Key Take aways
 1. **Prepare:** *Avoid* meetings if possible, identify the *audience*, define the *goal*, gather supporting *materials*.
-2. **Drive: **Recap the *context* and highlight the *goal*, stay on *topic*, *postpone* auxiliary aspects, ask *good questions*.
-3. **Summarize: **State the *agreements* and solved aspects, identify *outstanding* aspects, list *next action items* with *owners*.
+2. **Drive**: Recap the *context* and highlight the *goal*, stay on *topic*, *postpone* auxiliary aspects, ask *good questions*.
+3. **Summarize**: State the *agreements* and solved aspects, identify *outstanding* aspects, list *next action items* with *owners*.
